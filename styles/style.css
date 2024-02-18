@@ -20,6 +20,12 @@
     font-weight: 500;
     font-style: normal;
 }
+.raleway600 {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
 
 .inter800 {
     font-family: "Inter", sans-serif;
@@ -70,12 +76,4 @@ nav ul li {
     text-align: center;
 }
 
-.best-offer-section>h1 {
-    color: rgb(3, 7, 18);
-    font-family: Raleway;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 47px;
-    letter-spacing: 0px;
-    text-align: center;
-}
+
