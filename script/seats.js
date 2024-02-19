@@ -56,3 +56,55 @@ seatButtons.forEach(button => {
 
   });
 });
+
+
+
+// Coupon
+
+    const couponInputField = document.getElementById('coupon-input');
+    couponInputField.addEventListener('keyup', function(event){
+        const inputText = event.target.value;
+        const couponBtn = document.getElementById('coupon-btn')
+        couponBtn.addEventListener('click', function(){
+            if(inputText === 'NEW15'){
+                const discount = document.getElementById('grand-total');
+                const discountText = discount.innerText;
+                const discountNum = parseFloat(discountText);
+                const theDiscount = 15/100 * discountNum;
+                const grandPrice = discountNum - theDiscount
+                discount.innerText=grandPrice;
+                discount.style.color='darkgreen'
+                discount.style.fontSize='30px'
+
+
+
+
+                const label = document.getElementById('input-label')
+                        label.style.display='none'
+            }
+            else if(inputText === 'Couple 20'){
+                const discount = document.getElementById('grand-total');
+                const discountText = discount.innerText;
+                const discountNum = parseFloat(discountText);
+                const theDiscount = 20/100 * discountNum;
+                const grandPrice = discountNum - theDiscount
+                discount.innerText=grandPrice;
+                discount.style.color='darkgreen'
+                discount.style.fontSize='30px'
+            
+            
+            
+            
+            
+                
+                const label = document.getElementById('input-label')
+                    label.style.display='none'
+            }
+        })
+    })
+
+
+
+
+
+
