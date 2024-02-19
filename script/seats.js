@@ -64,21 +64,25 @@ seatButtons.forEach(button => {
     const couponInputField = document.getElementById('coupon-input');
     couponInputField.addEventListener('keyup', function(event){
         const inputText = event.target.value;
+        if(inputText === 'NEW15' || inputText === 'Couple 20'){
+            const dlt = document.getElementById('coupon-btn')
+            dlt.removeAttribute('disabled')
+        }
+        else{
+            const dlt = document.getElementById('coupon-btn')
+            dlt.setAttribute('disabled', true);
+        }
         const couponBtn = document.getElementById('coupon-btn')
         couponBtn.addEventListener('click', function(){
             if(inputText === 'NEW15'){
                 const discount = document.getElementById('grand-total');
                 const discountText = discount.innerText;
                 const discountNum = parseFloat(discountText);
-                const theDiscount = 15/100 * discountNum;
+                const theDiscount = (15/100 )* discountNum;
                 const grandPrice = discountNum - theDiscount
                 discount.innerText=grandPrice;
                 discount.style.color='darkgreen'
                 discount.style.fontSize='30px'
-
-
-
-
                 const label = document.getElementById('input-label')
                         label.style.display='none'
             }
@@ -86,19 +90,18 @@ seatButtons.forEach(button => {
                 const discount = document.getElementById('grand-total');
                 const discountText = discount.innerText;
                 const discountNum = parseFloat(discountText);
-                const theDiscount = 20/100 * discountNum;
+                const theDiscount = (20/100) * discountNum;
                 const grandPrice = discountNum - theDiscount
                 discount.innerText=grandPrice;
                 discount.style.color='darkgreen'
-                discount.style.fontSize='30px'
-            
-            
-            
-            
-            
-                
+                discount.style.fontSize='30px'  
                 const label = document.getElementById('input-label')
                     label.style.display='none'
+            }
+            else{
+                const oldTotal = document.getElementById('total-price');
+                const newTotal = document.getElementById('grand-total');
+                newTotal.innerText = oldTotal.innerText
             }
         })
     })
